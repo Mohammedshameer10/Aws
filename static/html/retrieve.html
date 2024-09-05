@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div>
+  <h2>Reterive Past Upload's</h2>
+    <button class="btn waves-effect waves-teal"  ng-click="reterivedata()">Reterive all Files</button>
+    <!-- <div ng-repeat='n in reterivedata'> -->
+        <table class="bordered ">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>File Description</th>
+            <th>File Location</th>
+            <th>File Upload Time</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr ng-repeat='n in reterived'>
+           <td>{{username}}</td>
+            <td>{{lastname}}</td>
+            <td>{{n.filename}}</td>
+            <td><a href="{{n.filelocation}}" >{{n.filelocation}}</a></td>
+            <td>{{n.created | date:"MM/dd/yyyy 'at' h:mma"}}</td>
+            <td><input class="waves-effect waves-light btn" type="button" name="Delete" ng-click="deleteFile(n.filekey)" value="Delete"></td>
+            <td><input class="waves-effect waves-light btn" type="button"  ng-click="updateFile(n.filekey)" value="Update"></td>
+     
+          </tr>
+        </table>
+    <!-- </div> -->
+</div>
+</body>
+</html>
